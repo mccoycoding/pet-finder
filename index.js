@@ -23,19 +23,19 @@ app.get('/api', (req, res) => {
 // get all pets from the database
 app.get('/api/v1/pets', (req, res) => {
     // send the pets array as a response
-    res.send(pets)
+    res.send(pets);
 });
 
 // get pet by owner with query string
 app.get('/api/v1/owners/:owner', (req, res) => {
     // get the owner from the request
-    const {owner} = req.params
+    const {owner} = req.params;
 
     // find the pet in the pets array
     const pet = pets.filter(pet => pet.owner.toLowerCase() === owner.toLowerCase());
 
     // send the pet as a response
-    res.send(pet)
+    res.send(pet);
 });
 
 // get pet by name
@@ -43,7 +43,7 @@ app.get('/api/v1/pets/:name', (req, res) => {
     // get the name from the route parameter
     const { name } = req.params;
 
-    console.log(name)
+    console.log(name);
     
     // find the pet in the pets array
     const pet = pets.find(pet => pet.name.toLowerCase() === name.toLowerCase());
